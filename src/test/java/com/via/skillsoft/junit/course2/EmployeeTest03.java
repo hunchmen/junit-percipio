@@ -1,5 +1,6 @@
 package com.via.skillsoft.junit.course2;
 
+import static org.junit.Assert.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeAll;
@@ -21,9 +22,11 @@ class EmployeeTest03 {
     @BeforeAll
     static void initEmployee() {
 
-        firstEmployee = new Employee("Amy", "Cruz", 1001, 'F', "Developer", 50000, "Permanent");
+        firstEmployee = new Employee("Amy", "Cruz", 1001, 'F', "Developer",
+                50000, "Permanent");
 
-        secondEmployee = new Employee("Brian", "Alford", 1011, 'M', "Developer", 45000, "Contract");
+        secondEmployee = new Employee("Brian", "Alford", 1011, 'M', "Developer",
+                45000, "Contract");
     }
 
     @Test
@@ -36,10 +39,13 @@ class EmployeeTest03 {
     void assertTest02() {
         Employee firstShallowCopy = firstEmployee;
         Employee firstSeparateCopy = new Employee(firstEmployee.getFirstName(),
-                firstEmployee.lastName, firstEmployee.getId(), firstEmployee.getGender(),
-                firstEmployee.getRole(), firstEmployee.getSalary(), firstEmployee.getType());
+                firstEmployee.lastName, firstEmployee.getId(),
+                firstEmployee.getGender(), firstEmployee.getRole(),
+                firstEmployee.getSalary(), firstEmployee.getType());
 
         assertSame(firstEmployee.getRole(), firstSeparateCopy.getRole());
+        assertSame(firstEmployee, firstShallowCopy);
+        assertNotSame(firstShallowCopy, firstSeparateCopy);
     }
 
 }

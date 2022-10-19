@@ -7,17 +7,18 @@ import org.junit.jupiter.api.Test;
 
 public class EmployeeTest02 {
 
-  static Employee employee;
+    static Employee employee;
 
-  @BeforeAll
-  static void initEmployee() {
-    employee = new Employee("Amy", "Cruz", 1001, 'F', "Developer", 50000, "Permanent");
-  }
+    @BeforeAll
+    static void initEmployee() {
+        employee = new Employee("Amy", "Cruz", 1001, 'F', "Developer", 50000,
+                "Permanent");
+    }
 
-  @Test
-  void assertTest() {
-    employee.adjustSalary(5000);
-    assertEquals(55000, employee.getSalary());
-  }
+    @Test
+    void assertTest() throws InterruptedException {
+        employee.adjustSalary(5000);
+        assertEquals(55000, employee.getSalary());
+    }
 
 }

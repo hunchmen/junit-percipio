@@ -1,75 +1,76 @@
 package com.via.skillsoft.junit;
 
 public class AccountDetails {
-	
-	private String name;
-	private Double accountNumber;
-	private Integer customerId;
-	private Double balance;
-	private String accountType;
-	
-	public AccountDetails(String name, double accountNumber, int customerId, double balance, String accountType) {
-		super();
-		this.name = name;
-		this.accountNumber = accountNumber;
-		this.customerId = customerId;
-		this.balance = balance;
-		this.accountType = accountType;
-	}
 
-	public String getName() {
-		return name;
-	}
+    private String name;
+    private Double accountNumber;
+    private Integer customerId;
+    private Double balance;
+    private String accountType;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public AccountDetails(String name, double accountNumber, int customerId,
+            double balance, String accountType) {
+        super();
+        this.name = name;
+        this.accountNumber = accountNumber;
+        this.customerId = customerId;
+        this.balance = balance;
+        this.accountType = accountType;
+    }
 
-	public Double getAccountNumber() {
-		return accountNumber;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setAccountNumber(Double accountNumber) {
-		this.accountNumber = accountNumber;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Integer getCustomerId() {
-		return customerId;
-	}
+    public Double getAccountNumber() {
+        return accountNumber;
+    }
 
-	public void setCustomerId(Integer customerId) {
-		this.customerId = customerId;
-	}
+    public void setAccountNumber(Double accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 
-	public Double getBalance() {
-		return balance;
-	}
+    public Integer getCustomerId() {
+        return customerId;
+    }
 
-	public void setBalance(Double balance) {
-		this.balance = balance;
-	}
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
+    }
 
-	public String getAccountType() {
-		return accountType;
-	}
+    public Double getBalance() {
+        return balance;
+    }
 
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-	}
-	
-	public void deposit(double depositAmount) {
-		balance = balance + depositAmount;
-	}
-	
-	public boolean withdraw(double withdrawAmount) {
-		if(withdrawAmount > balance) {
-			System.out.println("Insufficient Funds");
-			return false;
-		} else {
-			balance = balance - withdrawAmount;
-			return true;
-		}
-		
-	}
-	
+    public void setBalance(Double balance) {
+        this.balance = balance;
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
+    public void deposit(double depositAmount) {
+        balance = balance + depositAmount;
+    }
+
+    public boolean withdraw(double withdrawAmount) {
+        if (withdrawAmount > balance) {
+            System.out.println("Insufficient Funds");
+            return false;
+        } else {
+            balance = balance - withdrawAmount;
+            return true;
+        }
+
+    }
+
 }
