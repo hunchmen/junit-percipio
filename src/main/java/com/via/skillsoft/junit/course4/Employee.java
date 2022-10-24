@@ -87,7 +87,7 @@ public class Employee {
 
     public void adjustSalary(double adjAmount) {
 
-        if ((salary + adjAmount) > 50000) {
+        if ((salary + adjAmount) > 60000) {
             System.out.println("The salary exceeds the limit applied");
             return;
         }
